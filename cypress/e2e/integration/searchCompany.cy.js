@@ -1,4 +1,4 @@
-import searchCompany from "../../PageObjects/search_Company_Page";
+import searchCompany from "../../PageObjects/searchCompany";
 const search_Company = searchCompany;
 describe("Search Company", () => {
   it("Search Company", () => {

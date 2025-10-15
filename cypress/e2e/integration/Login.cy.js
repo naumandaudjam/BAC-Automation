@@ -1,4 +1,4 @@
-import Login from "../../PageObjects/Login_Page";
+import Login from "../../PageObjects/loginPage";
 const log = Login;
 describe("Login", () => {
   it("Login User", () => {

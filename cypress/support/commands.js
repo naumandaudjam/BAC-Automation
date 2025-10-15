@@ -1,4 +1,4 @@
-import Login from "../PageObjects/Login_Page";
+import Login from "../PageObjects/loginPage";
 
 /// <reference types="cypress" />
 

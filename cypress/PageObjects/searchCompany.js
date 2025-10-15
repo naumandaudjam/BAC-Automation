@@ -1,4 +1,4 @@
-import LOCATORS from "../Locators/search_Company_Locators";
+import LOCATORS from "../Locators/searchCompany_Locators";
 const searchCompanyForm = LOCATORS
 class search_Company_Page {
     visitSearchCompanyForm() 

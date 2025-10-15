@@ -1,4 +1,4 @@
-import LOCATORS from "../Locators/login_Page_Locators";
+import LOCATORS from "../Locators/loginPage_Locators";
 const { login } = LOCATORS;
 class Login {
   visitLoginPage() {
