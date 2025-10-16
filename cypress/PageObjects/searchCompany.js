@@ -1,5 +1,6 @@
 import LOCATORS from "../Locators/searchCompany_Locators";
-const searchCompanyForm = LOCATORS
+
+const searchCompanyForm = LOCATORS;
 class search_Company_Page {
     visitSearchCompanyForm() 
     {

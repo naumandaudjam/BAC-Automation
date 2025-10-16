@@ -1,4 +1,6 @@
-import Login from "../PageObjects/loginPage";
+import LoginPage from "../PageObjects/loginPage";
+
+const loginPage = LoginPage;
 
 /// <reference types="cypress" />
 
@@ -15,10 +17,10 @@ Cypress.Commands.add("loginWithSession", () => {
   cy.session(
     sessionKey,
     () => {
-      Login.visitLoginPage();
-      Login.changeLanguageToEnglish();
-      Login.fillLoginForm();
-      Login.submitLogin();
+      loginPage.visitLoginPage();
+      loginPage.changeLanguageToEnglish();
+      loginPage.fillLoginForm();
+      loginPage.submitLogin();
     },
     {
       cacheAcrossSpecs: true,

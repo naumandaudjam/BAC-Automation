@@ -10,7 +10,7 @@ class Login {
   fillLoginForm() {
     cy.fixture("loginUser").then(({ login_username, login_password }) => {
       cy.get(login.userName).type(login_username);
-      cy.get(login.password).type(login_password );
+      cy.get(login.password).type(login_password);
     });
   }
   submitLogin() {
