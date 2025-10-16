@@ -7,4 +7,5 @@ export const LOCATORS = {
     changeLanguage:":nth-child(1) > .lang"
   }
 };
+
 export default LOCATORS;

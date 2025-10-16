@@ -1,6 +1,7 @@
 import LOCATORS from "../Locators/searchCompany_Locators";
 
 const searchCompanyForm = LOCATORS;
+
 class search_Company_Page {
     visitSearchCompanyForm() 
     {
@@ -36,4 +37,5 @@ class search_Company_Page {
         cy.get(searchCompanyForm.searchBtn).click();
     }
 }
+
 export default new search_Company_Page();

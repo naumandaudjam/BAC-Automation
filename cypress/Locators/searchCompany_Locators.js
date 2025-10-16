@@ -8,4 +8,5 @@ const LOCATORS = {
     companyOfficePhone: '[name="PhoneOffice"]',
     searchBtn: '#Search'
 };
+
 export default LOCATORS;

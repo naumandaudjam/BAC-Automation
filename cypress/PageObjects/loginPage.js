@@ -1,5 +1,7 @@
 import LOCATORS from "../Locators/loginPage_Locators";
+
 const { login } = LOCATORS;
+
 class Login {
   visitLoginPage() {
     cy.visit(login.pageUrl);
@@ -17,4 +19,5 @@ class Login {
     cy.get(login.loginButton).click();
   }
 }
+
 export default new Login();
