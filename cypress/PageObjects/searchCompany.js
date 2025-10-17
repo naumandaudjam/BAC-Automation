@@ -22,7 +22,6 @@ class search_Company_Page {
     searchCompanyPhone()
     {
         cy.get(searchCompanyForm.companyPhone_Locator).type("1234567890");
-
     }
     searchCompanyMobile()
     {
