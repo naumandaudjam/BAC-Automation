@@ -1,12 +1,12 @@
 const LOCATORS = {
-    searchCompanyForm: 'https://bac-test.xpresspago.com//Client/Index',
-    companyName: '[name="UserName"]',
-    companyIdentification: '[name="Cedula"]',
-    companyEmail: '[name="EmailAddress"]',
-    companyPhone: '[name="PhoneNumber"]',
-    companyMobile: '[name="CellNumber"]',
-    companyOfficePhone: '[name="PhoneOffice"]',
-    searchBtn: '#Search'
+    searchCompanyForm_Locator: 'https://bac-test.xpresspago.com//Client/Index',
+    companyName_Locator: '[name="UserName"]',
+    companyIdentification_Locator: '[name="Cedula"]',
+    companyEmail_Locator: '[name="EmailAddress"]',
+    companyPhone_Locator: '[name="PhoneNumber"]',
+    companyMobile_Locator: '[name="CellNumber"]',
+    companyOfficePhone_Locator: '[name="PhoneOffice"]',
+    searchBtn_Locator: '#Search'
 };
 
 export default LOCATORS;

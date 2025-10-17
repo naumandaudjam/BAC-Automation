@@ -18,6 +18,11 @@ module.exports = defineConfig({
   },
   e2e: {
     baseUrl: environments.qa.baseUrl,
+    specPattern: [
+      "cypress/e2e/integration/Login.cy.js",
+      "cypress/e2e/integration/addCompany.cy.js",
+      "cypress/e2e/integration/searchCompany.cy.js",
+    ],
     setupNodeEvents(on, config) {
       require("cypress-mochawesome-reporter/plugin")(on);
       return config;

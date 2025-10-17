@@ -1,10 +1,10 @@
 export const LOCATORS = {
   login: {
-    pageUrl: "https://bac-test.xpresspago.com/",
-    userName: '[name="UserName"]',
-    password: '[name="Password"]',
-    loginButton: ".form-actions > .btn",
-    changeLanguage:":nth-child(1) > .lang"
+    pageUrl_Locator: "https://bac-test.xpresspago.com/",
+    userName_Locator: '[name="UserName"]',
+    password_Locator: '[name="Password"]',
+    loginButton_Locator: ".form-actions > .btn",
+    changeLanguage_Locator:":nth-child(1) > .lang"
   }
 };
 
