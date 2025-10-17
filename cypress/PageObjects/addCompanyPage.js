@@ -63,7 +63,6 @@ class addCompanyPage {
     {
         cy.get(addCompany.addSaveBtn_Locator).click();
     }
-
 }
 
 export default addCompanyPage;
