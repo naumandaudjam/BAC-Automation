@@ -1,21 +1,24 @@
 import LOCATORS from "../Locators/loginPage_Locators";
+import data from "../fixtures/login_data.json";
 
-const { login } = LOCATORS;
+const login = LOCATORS;
 
 class Login {
-  visitLoginPage() {
+  visitLoginPage() 
+  {
     cy.visit(login.pageUrl_Locator);
   }
-  changeLanguageToEnglish() {
+  changeLanguageToEnglish() 
+  {
     cy.get(login.changeLanguage_Locator).click();
   }
-  fillLoginForm() {
-    cy.fixture("data").then(({ login_username, login_password }) => {
-      cy.get(login.userName_Locator).type(login_username);
-      cy.get(login.password_Locator).type(login_password);
-    });
+  fillLoginForm() 
+  {
+    cy.get(login.userName_Locator).type(data.login_username);
+    cy.get(login.password_Locator).type(data.login_password);
   }
-  submitLogin() {
+  submitLogin() 
+  {
     cy.get(login.loginButton_Locator).click();
   }
 }

@@ -1,6 +1,6 @@
 import addCompanyPage from "../../PageObjects/addCompanyPage"; 
 
-const addCompany = new addCompanyPage();
+const addCompany = addCompanyPage;
 
 describe('Add Company Test Suite', () => {
     it('Redirect to Company Form', () => {

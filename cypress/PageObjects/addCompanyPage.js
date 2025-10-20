@@ -1,23 +1,21 @@
-import addCompany_Locators from '../Locators/addCompany_Locators';
+import addCompany_Locators from "../Locators/addCompany_Locators";
+import { companyName_Utilities, randomPhone_Utilities, randomEmail_Utilities } from "../support/utilities.js";
 
 const addCompany = addCompany_Locators;
 
-const randomNum = Math.floor(Math.random() * 10000);
-const randomPhone = `03${Math.floor(100000000 + Math.random() * 900000000)}`;
-const randomEmail = `user${randomNum}@yopmail.com`;
-const companyName = `Nauman${randomPhone}`;
-
 class addCompanyPage {
     
-    goToCompanyForm() {
+    goToCompanyForm() 
+    {
         cy.visit(addCompany.addCompanyFormUrl_Locator);
     }
-    clickAddCompanyBtn() {
+    clickAddCompanyBtn() 
+    {
         cy.get(addCompany.addCompanyButton_Locator).click();
     }
     addCompanyName()
     {
-        cy.get(addCompany.addCompanyName_Locator).type(companyName);
+        cy.get(addCompany.addCompanyName_Locator).type(companyName_Utilities);
     }
     addRUC()
     {
@@ -33,11 +31,13 @@ class addCompanyPage {
     }
     addPhone()
     {
-        cy.get(addCompany.addPhone_Locator).type(randomNum)
+        cy.get(addCompany.addPhone_Locator).type(randomPhone_Utilities)
     }
     addEmail()
     {
-        cy.get(addCompany.addEmail_Locator).type(randomEmail)
+        const email = randomEmail_Utilities;
+        cy.get(addCompany.addEmail_Locator).type(email);
+        cy.writeFile('cypress/fixtures/emailGenerated.json', { companyEmail: email });
     }
     addCommunication()
     {
@@ -65,4 +65,4 @@ class addCompanyPage {
     }
 }
 
-export default addCompanyPage;
+export default new addCompanyPage();

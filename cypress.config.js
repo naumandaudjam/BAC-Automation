@@ -27,6 +27,5 @@ module.exports = defineConfig({
       require("cypress-mochawesome-reporter/plugin")(on);
       return config;
     },
-    // Add additional e2e configuration (specPattern, env, etc.) as needed.
   },
 });
