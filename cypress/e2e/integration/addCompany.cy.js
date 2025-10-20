@@ -9,14 +9,9 @@ describe('Add Company Test Suite', () => {
         addCompany.addCompanyName();
         addCompany.addRUC();
         addCompany.addCity();
-        addCompany.addZip();
-        addCompany.addPhone();
         addCompany.addEmail();
         addCompany.addCommunication();
         addCompany.addCountry();
-        addCompany.addAddressType();
-        addCompany.addAddressLine1();
-        addCompany.addAddressLine2();
         addCompany.addCompanyBtn();
     });
 });

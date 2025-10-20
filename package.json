@@ -292,12 +292,12 @@
     "yocto-queue": "^0.1.0"
   },
   "devDependencies": {
-    "cypress": "^15.4.0",
+    "cypress": "^15.5.0",
     "mocha": "^11.7.4"
   },
   "scripts": {
     "test": "mocha",
-    "test:flow": "npx cypress run --spec \"cypress/e2e/integration/Login.cy.js,cypress/e2e/integration/searchCompany.cy.js,cypress/e2e/integration/addCompany.cy.js\""
+    "test:flow": "npx cypress run --spec \"cypress/e2e/integration/Login.cy.js,cypress/e2e/integration/addCompany.cy.js,cypress/e2e/integration/searchCompany.cy.js\""
   },
   "repository": {
     "type": "git",
@@ -310,5 +310,4 @@
     "url": "https://github.com/naumandaudjam/BAC-Automation/issues"
   },
   "homepage": "https://github.com/naumandaudjam/BAC-Automation#readme"
-
 }

@@ -1,5 +1,5 @@
 import addCompany_Locators from "../Locators/addCompany_Locators";
-import { companyName_Utilities, randomPhone_Utilities, randomEmail_Utilities } from "../support/utilities.js";
+import { companyName_Utilities, randomEmail_Utilities } from "../support/utilities.js";
 
 const addCompany = addCompany_Locators;
 
@@ -15,7 +15,9 @@ class addCompanyPage {
     }
     addCompanyName()
     {
-        cy.get(addCompany.addCompanyName_Locator).type(companyName_Utilities);
+        const companyName = companyName_Utilities;
+        cy.get(addCompany.addCompanyName_Locator).type(companyName);
+        cy.writeFile('cypress/fixtures/companyGenerated.json', { companyName });
     }
     addRUC()
     {
@@ -25,19 +27,9 @@ class addCompanyPage {
     {
         cy.get(addCompany.addCity_Locator).clear().type('islamabad')   
     }
-    addZip()
-    {
-        cy.get(addCompany.addZip_Locator).type('1233')
-    }
-    addPhone()
-    {
-        cy.get(addCompany.addPhone_Locator).type(randomPhone_Utilities)
-    }
     addEmail()
     {
-        const email = randomEmail_Utilities;
-        cy.get(addCompany.addEmail_Locator).type(email);
-        cy.writeFile('cypress/fixtures/emailGenerated.json', { companyEmail: email });
+        cy.get(addCompany.addEmail_Locator).type(randomEmail_Utilities);
     }
     addCommunication()
     {
@@ -46,18 +38,6 @@ class addCompanyPage {
     addCountry()
     {
         cy.get(addCompany.addCountry_Locator).select('Pakistan')
-    }
-    addAddressType()
-    {
-        cy.get(addCompany.addAddressType_Locator).select('2 Lines')
-    }
-    addAddressLine1()
-    {
-        cy.get(addCompany.addAddress1_Locator).type('Test')
-    }
-    addAddressLine2()
-    {
-        cy.get(addCompany.addAddress2_Locator).type('Test')
     }
     addCompanyBtn()
     {

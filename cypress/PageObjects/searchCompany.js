@@ -1,5 +1,4 @@
 import LOCATORS from "../Locators/searchCompany_Locators";
-import data from "../fixtures/login_data.json";
 
 const searchCompanyForm = LOCATORS;
 
@@ -9,10 +8,10 @@ class search_Company_Page {
         cy.visit(searchCompanyForm.searchCompanyForm_Locator);
     }
 
-    searchCompanyEmail()
+    searchCompanyName()
     {
-        cy.fixture("emailGenerated.json").then((emailGenerated) => {
-            cy.get(searchCompanyForm.companyEmail_Locator).type(emailGenerated.companyEmail);
+        cy.fixture("companyGenerated.json").then((companyGenerated) => {
+            cy.get(searchCompanyForm.companyName_Locator).type(companyGenerated.companyName);
         });
     }
     searchBtn()
