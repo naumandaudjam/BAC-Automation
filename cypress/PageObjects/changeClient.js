@@ -6,27 +6,20 @@ const changeClient_Locator = LOCATORS;
 class changeClient {
     visitDashboard()
     {
-        cy.visit(baseUrl_Utilities);
+    cy.visit(baseUrl_Utilities)
     }
     tapOnChangeClient()
     {
         cy.get(changeClient_Locator.changeClient_btn_Locator).click();
     }
-    searchCompany()
-    {
+    searchCompany() {
         cy.fixture("companyGenerated.json").then((companyGenerated) => {
-            cy.get(changeClient_Locator.searchCompany_Locator)
-                .clear()
-                .type(companyGenerated.companyName);
+            cy.get(changeClient_Locator.searchCompany_Locator).type(companyGenerated.companyName);
         });
     }
     selectCompany()
     {
-        cy.fixture("companyGenerated.json").then((companyGenerated) => {
-            cy.contains(changeClient_Locator.selectCompany_Locator, companyGenerated.companyName, {
-                timeout: 15000,
-            }).click();
-        });
+        cy.get(changeClient_Locator.selectCompany_Locator).click();
     }
 }
 

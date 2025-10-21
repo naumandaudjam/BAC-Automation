@@ -4,7 +4,7 @@ const baseUrl_Client_Utilities = "https://bac-test.xpresspago.com/Client/Index";
 const randomNum_Utilities = String(Math.floor(Math.random() * 1000)).padStart(3, "0");
 const randomPhone_Utilities = `03${Math.floor(100000000 + Math.random() * 900000000)}`;
 const randomEmail_Utilities = `user${randomNum_Utilities}@yopmail.com`;
-const companyName_Utilities = `Nauman${randomNum_Utilities}`;
+const companyName_Utilities = `Croem${randomNum_Utilities}`;
 
 export {
   baseUrl_Utilities,

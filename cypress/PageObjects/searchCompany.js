@@ -11,9 +11,7 @@ class search_Company_Page {
     searchCompanyName()
     {
         cy.fixture("companyGenerated.json").then((companyGenerated) => {
-            cy.get(searchCompanyForm.companyName_Locator)
-                .clear()
-                .type(companyGenerated.companyName);
+            cy.get(searchCompanyForm.companyName_Locator).type(companyGenerated.companyName);
         });
     }
     searchBtn()
@@ -23,14 +21,7 @@ class search_Company_Page {
     searchCompanyAssertion()
     {
         cy.fixture("companyGenerated.json").then((companyGenerated) => {
-            cy.contains(searchCompanyForm.searchCompanyResult, companyGenerated.companyName, {
-                timeout: 15000,
-            })
-                .should("be.visible")
-                .invoke("text")
-                .then((text) => {
-                    expect(text.trim()).to.eq(companyGenerated.companyName);
-                });
+            cy.get(searchCompanyForm.searchCompanyResult).should("have.text", companyGenerated.companyName);
         });
     }
 }

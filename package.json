@@ -297,7 +297,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "test:flow": "npx cypress run --spec \"cypress/e2e/integration/Login.cy.js,cypress/e2e/integration/addCompany.cy.js,cypress/e2e/integration/searchCompany.cy.js\""
+    "test:flow": "npx cypress run --spec cypress/e2e/integration/Login.cy.js && npx cypress run --spec cypress/e2e/integration/addCompany.cy.js && npx cypress run --spec cypress/e2e/integration/searchCompany.cy.js && npx cypress run --spec cypress/e2e/integration/changeClient.cy.js"
+
   },
   "repository": {
     "type": "git",

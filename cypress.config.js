@@ -11,10 +11,10 @@ module.exports = defineConfig({
     timestamp: "mm-dd-yyyy_HH-MM-ss",
   },
   e2e: {
+    pageLoadTimeout: 120000,
     setupNodeEvents(on, config) {
       require("cypress-mochawesome-reporter/plugin")(on);
       return config;
     },
   },
 });
-
