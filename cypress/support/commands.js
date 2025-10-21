@@ -1,8 +1,7 @@
+/// <reference types="cypress" />
 import LoginPage from "../PageObjects/loginPage";
 
 const loginPage = LoginPage;
-
-/// <reference types="cypress" />
 
 const SESSION_KEY_PREFIX = "default-login-session";
 

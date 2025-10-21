@@ -6,7 +6,8 @@ const LOCATORS = {
     companyPhone_Locator: '[name="PhoneNumber"]',
     companyMobile_Locator: '[name="CellNumber"]',
     companyOfficePhone_Locator: '[name="PhoneOffice"]',
-    searchBtn_Locator: '#Search'
+    searchBtn_Locator: '#Search',
+    searchCompanyResult: '.sorting_1'
 };
 
 export default LOCATORS;

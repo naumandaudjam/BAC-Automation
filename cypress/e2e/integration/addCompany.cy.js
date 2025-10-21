@@ -13,5 +13,6 @@ describe('Add Company Test Suite', () => {
         addCompany.addCommunication();
         addCompany.addCountry();
         addCompany.addCompanyBtn();
+        addCompany.companyCreatedAssertion();
     });
 });

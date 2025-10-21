@@ -7,5 +7,6 @@ describe("Search Company", () => {
     search_Company.visitSearchCompanyForm();
     search_Company.searchCompanyName();
     search_Company.searchBtn();
+    search_Company.searchCompanyAssertion();
   });
 });

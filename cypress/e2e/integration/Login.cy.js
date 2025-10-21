@@ -8,5 +8,6 @@ describe("Login Test Suite", () => {
     log.changeLanguageToEnglish();
     log.fillLoginForm();
     log.submitLogin();
+    log.homeDashboard();
   });
 });
