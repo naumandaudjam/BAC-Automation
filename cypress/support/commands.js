@@ -1,20 +1,24 @@
 /// <reference types="cypress" />
 import LoginPage from "../PageObjects/loginPage";
+import { baseUrl_Utilities } from "./utilities";
 
 const loginPage = LoginPage;
 
-const SESSION_KEY_PREFIX = "default-login-session";
+const LOGIN_SESSION_KEY = "default-login-session";
 
-const buildSessionKey = () => {
-  const specName = (Cypress.spec?.name || "global").toLowerCase();
-  const sanitized = specName.replace(/[^a-z0-9]+/g, "-");
-  return `${SESSION_KEY_PREFIX}-${sanitized}`.replace(/-$/g, "");
+const validateLoginSession = () => {
+  cy.request({
+    url: baseUrl_Utilities,
+    failOnStatusCode: false,
+    followRedirect: false,
+  }).then((response) => {
+    expect(response.status).to.eq(200);
+  });
 };
 
 Cypress.Commands.add("loginWithSession", () => {
-  const sessionKey = buildSessionKey();
   cy.session(
-    sessionKey,
+    LOGIN_SESSION_KEY,
     () => {
       loginPage.visitLoginPage();
       loginPage.changeLanguageToEnglish();
@@ -23,6 +27,7 @@ Cypress.Commands.add("loginWithSession", () => {
     },
     {
       cacheAcrossSpecs: true,
+      validate: validateLoginSession,
     }
   );
 });
