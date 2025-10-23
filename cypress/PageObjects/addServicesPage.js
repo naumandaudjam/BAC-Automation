@@ -1,18 +1,22 @@
 import LOCATORS from "../Locators/addServices_Locators";
-import { baseUrl_Product_Utilities } from "../support/utilities";
-import { baseUrl_addServices_Utilities } from "../support/utilities";
-import { serviceName_Utilities } from "../support/utilities";
+import {
+  baseUrl_Product_Utilities,
+  baseUrl_addServices_Utilities,
+  baseUrl_addServices_Utilities_Success,
+  serviceName_Utilities,
+  visitIfNotCurrent,
+} from "../support/utilities";
 
-const add_Services_Locators = LOCATORS;
+const addServices = LOCATORS;
 
-class addServices {
-    menuServices()
+class addServicesPage {
+    tapMenuServices()
     {
-        cy.visit(baseUrl_Product_Utilities);
+        visitIfNotCurrent(baseUrl_Product_Utilities);
     }
     tapOnAddServices()
     {
-        cy.get(add_Services_Locators.addServiceBtn_Locator).click();
+        cy.get(addServices.addServiceBtn_Locator).click();
     }
     addServiceFromVisibility_Assertion()
     {
@@ -20,23 +24,24 @@ class addServices {
     }
     addProductName()
     {
-        cy.get(add_Services_Locators.addProductName_Locator).type(serviceName_Utilities);
+        cy.get(addServices.addProductName_Locator).type(serviceName_Utilities);
     }
     addCurrency()
     {
-        cy.get(add_Services_Locators.dropDown_Currency_Locator).select("US Dollar - USD");
+        cy.get(addServices.dropDown_Currency_Locator).select("US Dollar - USD");
     }
     addAmount()
     {
-        cy.get(add_Services_Locators.addAmount_Locator).clear().type('5000');
+        cy.get(addServices.addAmount_Locator).clear().type('5000');
     }
     createService()
     {
-
-        cy.get(add_Services_Locators.createServices_Locator).click();
-        cy.wait(10000);
-        
+        cy.get(addServices.createServices_Locator).click();        
+    }
+    assertCompanyCreated()
+    {
+        cy.url().should('include', baseUrl_addServices_Utilities_Success);
     }
 }
 
-export default new addServices();
+export default new addServicesPage();

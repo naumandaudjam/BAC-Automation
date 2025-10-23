@@ -1,14 +1,14 @@
 import LOCATORS from "../Locators/changeClient_Locators";
-import {baseUrl_Utilities } from "../support/utilities";
+import { baseUrl_Utilities, visitIfNotCurrent } from "../support/utilities";
 
 const changeClient_Locator = LOCATORS;
 
 class changeClient {
     visitDashboard()
     {
-    cy.visit(baseUrl_Utilities)
+        visitIfNotCurrent(baseUrl_Utilities);
     }
-    tapOnChangeClient()
+    tapChangeClient()
     {
         cy.get(changeClient_Locator.changeClient_btn_Locator).click();
     }
@@ -20,6 +20,17 @@ class changeClient {
     selectCompany()
     {
         cy.get(changeClient_Locator.selectCompany_Locator).click();
+    }
+    assertCompanyChanged()
+    {
+        cy.url().should('include', baseUrl_Utilities);
+    }
+    switchToTargetClient()
+    {
+        this.visitDashboard();
+        this.tapChangeClient();
+        this.searchCompany();
+        this.selectCompany();
     }
 }
 

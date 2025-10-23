@@ -1,14 +1,19 @@
 import addCompany_Locators from "../Locators/addCompany_Locators";
-import { baseUrl_Client_Utilities, companyName_Utilities, randomEmail_Utilities } from "../support/utilities.js";
+import {
+  baseUrl_Client_Utilities,
+  companyName_Utilities,
+  randomEmail_Utilities,
+  visitIfNotCurrent,
+} from "../support/utilities.js";
 
 const addCompany = addCompany_Locators;
 
 class addCompanyPage {
-    goToCompanyForm() 
+    loadCompanyForm() 
     {
-        cy.visit(baseUrl_Client_Utilities);
+        visitIfNotCurrent(baseUrl_Client_Utilities);
     }
-    clickAddCompanyBtn() 
+    tapAddCompanyBtn() 
     {
         cy.get(addCompany.addCompanyButton_Locator).click();
     }
@@ -38,11 +43,11 @@ class addCompanyPage {
     {
         cy.get(addCompany.addCountry_Locator).select('Pakistan')
     }
-    addCompanyBtn()
+    tapCreateCompanyBtn()
     {
         cy.get(addCompany.addSaveBtn_Locator).click();
     }
-    companyCreatedAssertion()
+    assertCompanyCreated()
     {
         cy.url().should('include', baseUrl_Client_Utilities);
     }
