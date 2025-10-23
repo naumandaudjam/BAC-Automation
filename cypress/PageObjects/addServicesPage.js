@@ -4,7 +4,6 @@ import {
   baseUrl_addServices_Utilities,
   baseUrl_addServices_Utilities_Success,
   serviceName_Utilities,
-  visitIfNotCurrent,
 } from "../support/utilities";
 
 const addServices = LOCATORS;
@@ -12,7 +11,7 @@ const addServices = LOCATORS;
 class addServicesPage {
     tapMenuServices()
     {
-        cy.visit(baseUrl_Product_Utilities);
+        cy.visit("/Product/Index");
     }
     tapOnAddServices()
     {
