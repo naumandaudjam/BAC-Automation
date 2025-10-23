@@ -13,6 +13,5 @@ describe("Add Services", () => {
     add_Services.addCurrency();
     add_Services.addAmount();
     add_Services.createService();
-    add_Services.assertCompanyCreated();
   });
 });

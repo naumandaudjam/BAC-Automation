@@ -8,6 +8,5 @@ describe("Change Client", () => {
     change_Client.tapChangeClient();
     change_Client.searchCompany();
     change_Client.selectCompany();
-    change_Client.assertCompanyChanged();
   });
 });

@@ -1,13 +1,11 @@
 import LOCATORS from "../Locators/loginPage_Locators";
 import data from "../fixtures/login_data.json";
-import {baseUrl_Utilities } from "../support/utilities";
-
 const login = LOCATORS;
 
 class LoginPage {
   visitLoginPage() 
   {
-    cy.visit(baseUrl_Utilities);
+    cy.visit("/");
   }
   changeLanguageToEnglish() 
   {
@@ -22,9 +20,8 @@ class LoginPage {
   {
     cy.get(login.loginButton_Locator).click();
   }
-  assertDashboardLoaded()
-  {
-        cy.url().should('include', baseUrl_Utilities);
+  assertDashboardLoaded() {
+    cy.url().should('not.include', "/Login");
   }
 }
 

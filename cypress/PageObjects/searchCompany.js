@@ -6,7 +6,7 @@ const searchCompanyForm = LOCATORS;
 class search_Company_Page {
     loadSearchCompanyForm() 
     {
-        cy.visit(baseUrl_Client_Utilities);
+        cy.visit("/Client/Index");
     }
     searchCompanyName()
     {

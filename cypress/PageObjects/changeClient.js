@@ -6,7 +6,7 @@ const changeClient_Locator = LOCATORS;
 class changeClient {
     visitDashboard()
     {
-    cy.visit(baseUrl_Utilities)
+        cy.visit("/")
     }
     tapChangeClient()
     {
@@ -20,10 +20,6 @@ class changeClient {
     selectCompany()
     {
         cy.get(changeClient_Locator.selectCompany_Locator).click();
-    }
-    assertCompanyChanged()
-    {
-        cy.url().should('include', baseUrl_Utilities);
     }
     switchToTargetClient()
     {

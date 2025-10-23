@@ -6,7 +6,7 @@ const addCompany = addCompany_Locators;
 class addCompanyPage {
     loadCompanyForm() 
     {
-        cy.visit(baseUrl_Client_Utilities);
+        cy.visit("/Client/Index");
     }
     tapAddCompanyBtn() 
     {
