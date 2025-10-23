@@ -1,12 +1,12 @@
 import LOCATORS from "../Locators/changeClient_Locators";
-import { baseUrl_Utilities, visitIfNotCurrent } from "../support/utilities";
+import {baseUrl_Utilities } from "../support/utilities";
 
 const changeClient_Locator = LOCATORS;
 
 class changeClient {
     visitDashboard()
     {
-        visitIfNotCurrent(baseUrl_Utilities);
+    cy.visit(baseUrl_Utilities)
     }
     tapChangeClient()
     {

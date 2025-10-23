@@ -3,15 +3,16 @@ import addCompanyPage from "../../PageObjects/addCompanyPage";
 const addCompany = addCompanyPage;
 
 describe('Add Company Test Suite', () => {
-    it('Redirect to Company Form', () => {
-        addCompany.goToCompanyForm();
-        addCompany.clickAddCompanyBtn();
+    it('Redirect to Company Form and Create a Company', () => {
+        addCompany.loadCompanyForm();
+        addCompany.tapAddCompanyBtn();
         addCompany.addCompanyName();
         addCompany.addRUC();
         addCompany.addCity();
         addCompany.addEmail();
         addCompany.addCommunication();
         addCompany.addCountry();
-        addCompany.addCompanyBtn();
+        addCompany.tapCreateCompanyBtn();
+        addCompany.assertCompanyCreated();
     });
 });

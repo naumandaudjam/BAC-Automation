@@ -6,15 +6,13 @@ const add_Services = addServices;
 
 describe("Add Services", () => {
   it("Switch to target client before adding services", () => {
-    change_Client.visitDashboard();
-    change_Client.tapOnChangeClient();
-    change_Client.searchCompany();
-    change_Client.selectCompany();
-    add_Services.menuServices();
+    change_Client.switchToTargetClient();
+    add_Services.tapMenuServices();
     add_Services.tapOnAddServices();
     add_Services.addProductName();
     add_Services.addCurrency();
     add_Services.addAmount();
     add_Services.createService();
+    add_Services.assertCompanyCreated();
   });
 });

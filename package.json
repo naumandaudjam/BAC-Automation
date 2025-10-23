@@ -56,7 +56,6 @@
     "core-util-is": "^1.0.2",
     "cross-spawn": "^7.0.6",
     "crypto-js": "^4.2.0",
-    "cypress-mochawesome-reporter": "^4.0.2",
     "dashdash": "^1.14.1",
     "dateformat": "^4.6.3",
     "dayjs": "^1.11.18",
@@ -186,9 +185,6 @@
     "minimatch": "^9.0.5",
     "minimist": "^1.2.8",
     "minipass": "^7.1.2",
-    "mochawesome": "^7.1.4",
-    "mochawesome-merge": "^5.0.0",
-    "mochawesome-report-generator": "^6.3.0",
     "ms": "^2.1.3",
     "natural-compare": "^1.4.0",
     "npm-run-path": "^4.0.1",
@@ -297,8 +293,11 @@
   },
   "scripts": {
     "test": "mocha",
-    "test:flow": "node scripts/run-flow.js"
-
+    "test:flow": "node scripts/run-flow.js",
+    "cy:open": "cypress open",
+    "cy:open:edge": "cypress open --browser edge",
+    "cy:run": "cypress run",
+    "cy:run:edge": "cypress run --browser edge"
   },
   "repository": {
     "type": "git",

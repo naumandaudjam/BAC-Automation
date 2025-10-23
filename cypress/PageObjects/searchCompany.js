@@ -1,12 +1,12 @@
 import LOCATORS from "../Locators/searchCompany_Locators";
-import { baseUrl_Client_Utilities, visitIfNotCurrent } from "../support/utilities.js";
+import { baseUrl_Client_Utilities } from "../support/utilities.js";
 
 const searchCompanyForm = LOCATORS;
 
 class search_Company_Page {
     loadSearchCompanyForm() 
     {
-        visitIfNotCurrent(baseUrl_Client_Utilities);
+        cy.visit(baseUrl_Client_Utilities);
     }
     searchCompanyName()
     {

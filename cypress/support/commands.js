@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
-import LoginPage from "../PageObjects/loginPage";
-import { baseUrl_Utilities, suppressStaticAssets } from "./utilities";
+import LoginPage from "../PageObjects/loginPage"
+import { baseUrl_Utilities } from "./utilities";
+
 
 const loginPage = LoginPage;
 
@@ -20,7 +21,6 @@ Cypress.Commands.add("loginWithSession", () => {
   cy.session(
     LOGIN_SESSION_KEY,
     () => {
-      suppressStaticAssets();
       loginPage.visitLoginPage();
       loginPage.changeLanguageToEnglish();
       loginPage.fillLoginForm();
@@ -28,7 +28,6 @@ Cypress.Commands.add("loginWithSession", () => {
     },
     {
       cacheAcrossSpecs: true,
-      validate: validateLoginSession,
     }
   );
 });

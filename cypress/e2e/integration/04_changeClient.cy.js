@@ -5,8 +5,9 @@ const change_Client = changeClient
 describe("Change Client", () => {
   it("Change Client", () => {
     change_Client.visitDashboard();
-    change_Client.tapOnChangeClient();
+    change_Client.tapChangeClient();
     change_Client.searchCompany();
     change_Client.selectCompany();
+    change_Client.assertCompanyChanged();
   });
 });

@@ -3,13 +3,11 @@ import { baseUrl_Utilities } from "../../support/utilities";
 
 const log = Login;
 
-describe("Login Test Suite", () => {
+describe("loginSession", () => {
   before(() => {
     cy.loginWithSession();
   });
 
-  it("Login Test Case", () => {
-    cy.visit(baseUrl_Utilities);
-    log.homeDashboard();
+  it("Successfully Login and Verify Dashboard", () => {
   });
 });

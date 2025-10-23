@@ -4,9 +4,9 @@ const search_Company = searchCompany;
 
 describe("Search Company", () => {
   it("Visit Search Company Form", () => {
-    search_Company.visitSearchCompanyForm();
+    search_Company.loadSearchCompanyForm();
     search_Company.searchCompanyName();
-    search_Company.searchBtn();
-    search_Company.searchCompanyAssertion();
+    search_Company.tapSearchBtn();
+    search_Company.assertCompanySearch();
   });
 });

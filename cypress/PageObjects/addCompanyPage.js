@@ -1,17 +1,12 @@
 import addCompany_Locators from "../Locators/addCompany_Locators";
-import {
-  baseUrl_Client_Utilities,
-  companyName_Utilities,
-  randomEmail_Utilities,
-  visitIfNotCurrent,
-} from "../support/utilities.js";
+import { baseUrl_Client_Utilities, companyName_Utilities, randomEmail_Utilities } from "../support/utilities.js";
 
 const addCompany = addCompany_Locators;
 
 class addCompanyPage {
     loadCompanyForm() 
     {
-        visitIfNotCurrent(baseUrl_Client_Utilities);
+        cy.visit(baseUrl_Client_Utilities);
     }
     tapAddCompanyBtn() 
     {

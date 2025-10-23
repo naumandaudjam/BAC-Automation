@@ -12,7 +12,7 @@ const addServices = LOCATORS;
 class addServicesPage {
     tapMenuServices()
     {
-        visitIfNotCurrent(baseUrl_Product_Utilities);
+        cy.visit(baseUrl_Product_Utilities);
     }
     tapOnAddServices()
     {
