@@ -3,8 +3,9 @@ trigger:
     include:
       - main
 
+# 👇 Ye self-hosted agent pool ka naam hai
 pool:
-  vmImage: 'ubuntu-latest'
+  name: 'Test'
 
 stages:
 - stage: Test
@@ -15,6 +16,8 @@ stages:
         - task: NodeTool@0
           inputs:
             versionSpec: '18.x'
+          displayName: "Install Node.js"
+
         - script: |
             npm ci
             npx cypress install
