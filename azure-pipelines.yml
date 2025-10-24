@@ -8,18 +8,21 @@ pool:
   name: 'Test'
 
 stages:
+# ========================
+# 🧪 Run Cypress Tests
+# ========================
 - stage: Test
   displayName: "Run Cypress Tests"
   jobs:
     - job: TestJob
       steps:
-        # ✅ Pin Node version to 18.18.2 (stable for Cypress 15.5.0)
+        # ✅ Install Node.js (compatible version)
         - task: NodeTool@0
           inputs:
             versionSpec: '18.18.2'
           displayName: "Install Node.js 18.18.2"
 
-        # ✅ Clean install dependencies and verify Cypress
+        # ✅ Run Cypress Tests
         - script: |
             echo "Installing dependencies..."
             npm ci
@@ -28,24 +31,3 @@ stages:
             echo "Running Cypress tests..."
             npx cypress run --browser electron --headless --spec "cypress/e2e/integration/*.cy.js"
           displayName: "Execute Cypress Tests"
-
-- stage: Build
-  dependsOn: Test
-  displayName: "Build Project"
-  jobs:
-    - job: BuildJob
-      steps:
-        - script: |
-            echo "Building project..."
-            npm run build
-          displayName: "Build Project"
-
-- stage: Release
-  dependsOn: Build
-  displayName: "Deploy to Staging/Production"
-  jobs:
-    - job: ReleaseJob
-      steps:
-        - script: |
-            echo "Deploying application..."
-          displayName: "Release Stage"
