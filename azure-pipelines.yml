@@ -3,7 +3,7 @@ trigger:
     include:
       - main
 
-# 👇 Ye self-hosted agent pool ka naam hai
+# 👇 Self-hosted agent pool
 pool:
   name: 'Test'
 
@@ -13,14 +13,19 @@ stages:
   jobs:
     - job: TestJob
       steps:
+        # ✅ Pin Node version to 18.18.2 (stable for Cypress 15.5.0)
         - task: NodeTool@0
           inputs:
-            versionSpec: '18.x'
-          displayName: "Install Node.js"
+            versionSpec: '18.18.2'
+          displayName: "Install Node.js 18.18.2"
 
+        # ✅ Clean install dependencies and verify Cypress
         - script: |
+            echo "Installing dependencies..."
             npm ci
-            npx cypress install
+            echo "Verifying Cypress installation..."
+            npx cypress verify
+            echo "Running Cypress tests..."
             npx cypress run --browser electron --headless --spec "cypress/e2e/integration/*.cy.js"
           displayName: "Execute Cypress Tests"
 
@@ -30,7 +35,9 @@ stages:
   jobs:
     - job: BuildJob
       steps:
-        - script: npm run build
+        - script: |
+            echo "Building project..."
+            npm run build
           displayName: "Build Project"
 
 - stage: Release
@@ -39,5 +46,6 @@ stages:
   jobs:
     - job: ReleaseJob
       steps:
-        - script: echo "Deploying application..."
+        - script: |
+            echo "Deploying application..."
           displayName: "Release Stage"
